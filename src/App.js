@@ -193,14 +193,24 @@ function App() {
 
   const [colaboradores, setColaboradores] = useState(inicial)
 
-
+function deletarColaborador() {
+  console.log('Deletando Colaborador')
+}
   return (
     <div>
       <Banner />
       <Formulario times={times.map(time => time.nome)} aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} />
       <section className="times">
         <h1>Pessoas e Rotas</h1>
-        {times.map((time, indice) => <Time key={indice} time={time} colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} />)}
+        {times.map((time, indice) => 
+          <Time 
+          key={indice} 
+          time={time} 
+          colaboradores={colaboradores.filter(colaborador => colaborador.time 
+          === time.nome)} 
+          aoDeletar={deletarColaborador}
+          />
+          )}
       </section>
       <Rodape />
     </div>

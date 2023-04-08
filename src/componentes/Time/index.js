@@ -8,6 +8,10 @@ const Time = ({ time, colaboradores, aoDeletar }) => {
             <h3 style={{ borderColor: time.corSecundaria }}>{time.nome}</h3>
             <div className='colaboradores'>
                 {colaboradores.map((colaborador, indice) => {
+                    // console.log(<Colaborador key={indice} 
+                    //     colaborador={colaborador} 
+                    //     corDeFundo={time.corSecundaria} 
+                    //     aoDeletar={aoDeletar}/>)
                     return <Colaborador key={indice} 
                     colaborador={colaborador} 
                     corDeFundo={time.corSecundaria} 
