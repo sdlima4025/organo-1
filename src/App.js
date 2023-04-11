@@ -229,15 +229,20 @@ function mudarCorDoTime(cor, id) {
         time.cor = cor;
       }
       return time;
-    })
-  );
+    }));
 }
+  function cadastrarTime(novoTime)  {
+    setTimes([...times, {...novoTime, id:uuidv4()}])
+  }
   return (
     <div>
       <Banner />
       <Formulario 
+      cadastrarTime = {cadastrarTime}
       times={times.map(time => time.nome)} 
-      aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} />
+      aoCadastrar={colaborador => 
+      setColaboradores([...colaboradores, colaborador])} 
+      />
       <section className="times">
         <h1>Pessoas e Rotas</h1>
         {times.map((time, indice) => 
